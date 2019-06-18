@@ -40,32 +40,38 @@ window.addEventListener("scroll", (event) => {
 });
 
 // 5: Turns paragraph text red
-let paragraph = document.querySelector('p')
+const paragraph = document.querySelector('p')
 paragraph.addEventListener('click', (event) => {
     event.target.style.color = 'red'
  });
 
-// 6: Makes links unclickable and hover turns hot pink
+// 6: Makes links unclickable and hover turns hot pink, mouseleave not working
 const navLinks = document.querySelectorAll(".nav-link");
 navLinks.forEach(function (item) {
     linkHover(item);
-    item.addEventListener("click", (event) => {
+    item.addEventListener('click', (event) => {
       event.preventDefault();
+      alert("You can't click meeee!!"); 
     });
   });
   function linkHover(item) {
-    item.addEventListener("mouseenter", (event) => {
-      item.style.color = "hotpink";
+    item.addEventListener('mouseenter', (event) => {
+      item.style.color = 'hotpink';
     });
   
-     item.addEventListener("mouseleave", (event) => {
+     item.addEventListener('mouseleave', (event) => {
       item.style.color = black;
     });
   }
-// 7:
+// 7: Right click to change background color to hotpink
+const container = document.querySelector('.home'); 
+    container.addEventListener('contextmenu', (event) => {
+        event.target.style.backgroundColor = 'hotpink';
+});
 
-// 8:
-
+// 8: Dragging funbus makes it 1.1x it's size
+const funBus = document.querySelector('.intro');
+    funBus.addEventListener('drag', (event) => event.target.style.transform = 'scale(1.1)');
 // 9:
 
 // 10:
