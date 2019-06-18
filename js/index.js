@@ -59,13 +59,12 @@ navLinks.forEach(function (item) {
     });
   
      item.addEventListener('mouseleave', (event) => {
-      item.style.color = black;
+      item.style.color = 'black';
     });
   }
 
 // 7: Right click to change background color to hotpink
-const container = document.querySelector('.home'); 
-    container.addEventListener('contextmenu', (event) => {
+    window.addEventListener('contextmenu', (event) => {
         event.target.style.backgroundColor = 'hotpink';
 });
 
